@@ -8,7 +8,7 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -94,3 +94,37 @@ jobs:
         with:
           name: Play-Music-Windows
           path: play_music-windows.zip
+
+  release:
+    name: Publish Release
+    needs: [android, windows]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: Play-Music-Android-debug-apk
+          path: .
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: Play-Music-Windows
+          path: .
+
+      - name: Create or update Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: Latest Automated Build
+          body: |
+            This release contains the latest automated build files.
+            
+            - **Android debug APK**: Download and install `Play-Music-Android-debug.apk` directly on your phone.
+            - **Windows app**: Download and extract `play_music-windows.zip`.
+          files: |
+            Play-Music-Android-debug.apk
+            play_music-windows.zip
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
