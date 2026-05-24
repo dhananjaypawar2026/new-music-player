@@ -98,7 +98,7 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
         .importMusicFiles();
 
     // Re-read the newly imported tracks
-    final importedTracks = ref.read(audioFilesServiceProvider).valueOrNull;
+    final importedTracks = ref.read(audioFilesServiceProvider).asData?.value;
     if (importedTracks != null && importedTracks.isNotEmpty) {
       // Update the audio player with the new track list
       await ref

@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:collection';
 import 'dart:convert';
 import 'dart:io' if (dart.library.html) 'package:play_music/core/stubs/io_stub.dart';
-import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
@@ -147,7 +146,6 @@ class AudioFilesServiceNotifier
             trackArtistNames: ['Unknown Artist'],
             albumName: 'Unknown Album',
             albumArtistName: 'Unknown Artist',
-            genres: const [],
             filePath: blobUrl,
             originalSongIndex: index,
             isOnDevice: false,
@@ -204,7 +202,7 @@ class AudioFilesServiceNotifier
         // On web we always show the picker (blob URLs are session-only)
         final newTracks = await _pickAudioFilesOnWeb(metadataBox);
         final existing =
-            state.valueOrNull ?? UnmodifiableListView<MusicMetadata>([]);
+            state.asData?.value ?? UnmodifiableListView<MusicMetadata>([]);
         final combined = [
           ...existing,
           ...newTracks.map(
