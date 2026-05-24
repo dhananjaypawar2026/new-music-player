@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.12.0
+Name=Play Music
+Comment=An iPod Classic-inspired local music player with playlists, cover art, and shuffle mode and dark mode support
+Exec=play_music
+Icon=${SNAP}/meta/gui/play_music.png
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Player;Music;
+Keywords=music;player;audio;ipod;local;songs;offline;
+StartupWMClass=play_music
