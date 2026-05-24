@@ -1,0 +1,49 @@
+import 'package:flutter/cupertino.dart';
+import 'package:play_music/core/constants/app_palette.dart';
+import 'package:play_music/core/extensions/build_context_extensions.dart';
+import 'package:play_music/core/widgets/custom_sliding_segmented_control.dart';
+
+class ShuffleSegmentedControl extends StatelessWidget {
+  final bool isShuffleEnabled;
+  final ValueChanged<bool?> onValueChanged;
+
+  const ShuffleSegmentedControl({
+    super.key,
+    required this.isShuffleEnabled,
+    required this.onValueChanged,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(CupertinoIcons.shuffle, color: context.appPrimaryTextColor),
+        const SizedBox(width: 20),
+        CustomSlidingSegmentedControl<bool>(
+          groupValue: isShuffleEnabled,
+          padding: EdgeInsets.zero,
+          children: {
+            false: Text(
+              context.localization.tileValueOff,
+              style: TextStyle(
+                color: !isShuffleEnabled
+                    ? AppPalette.selectedTileGradientColor2
+                    : context.appPrimaryTextColor,
+              ),
+            ),
+            true: Text(
+              context.localization.songsScreenTitle,
+              style: TextStyle(
+                color: isShuffleEnabled
+                    ? AppPalette.selectedTileGradientColor2
+                    : context.appPrimaryTextColor,
+              ),
+            ),
+          },
+          onValueChanged: onValueChanged,
+        ),
+      ],
+    );
+  }
+}
