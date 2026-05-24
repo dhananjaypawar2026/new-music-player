@@ -1,0 +1,14 @@
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:play_music/core/providers/filtered_audio_files_provider.dart';
+
+final genresProvider = Provider<List<String>>((ref) {
+  final genreNamesSet = <String>{};
+  ref.read(filteredAudioFilesProvider).requireValue.forEach((audioFile) {
+    genreNamesSet.addAll(audioFile.genres);
+  });
+
+  final genreNames = genreNamesSet.toList();
+  genreNames.sort();
+
+  return genreNames;
+});
