@@ -61,7 +61,6 @@ google_service_account.json
 *.opus
 
 # Temporary ignore to allow successful small push over unstable network
-/assets/
 /fastlane/metadata/
 /test/test_files/
 /screenshots/
