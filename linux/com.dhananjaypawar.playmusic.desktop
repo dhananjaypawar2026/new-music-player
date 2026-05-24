@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Play Music
+Comment=An iPod Classic-inspired local music player with playlists, cover art, and shuffle mode and dark mode support
+Exec=/usr/bin/play_music
+Icon=/usr/share/icons/play_music/play_music.png
+Terminal=false
+Type=Application
+Categories=AudioVideo;Audio;Player;Music;
+StartupWMClass=play_music
