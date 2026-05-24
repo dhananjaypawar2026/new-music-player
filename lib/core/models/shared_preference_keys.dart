@@ -1,0 +1,17 @@
+enum SharedPreferencesKeys {
+  languageLocaleCode,
+  deviceColor,
+  clickWheelSize,
+  clickWheelSensitivity,
+  isTouchScreenEnabled,
+  repeatMode,
+  vibrate,
+  clickWheelSound,
+  volumeMode,
+  appTheme,
+  splitScreenEnabled,
+  immersiveMode,
+  isMenuFirstTime,
+  isNowPlayingFirstTime,
+  isInputTextBarFirstTime,
+}

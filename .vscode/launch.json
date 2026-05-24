@@ -1,0 +1,53 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Play Music",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "flutterMode": "debug",
+            "args": ["--flavor", "production","--target","lib/main.dart"]
+        },
+        {
+            "name": "Play Music (profile mode)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "flutterMode": "profile",
+            "args": ["--flavor", "production","--target","lib/main.dart"]
+        },
+        {
+            "name": "Play Music (release mode)",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main.dart",
+            "flutterMode": "release",
+            "args": ["--flavor", "production","--target","lib/main.dart"]
+        },
+        {
+            "name": "Play Music Development",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_development.dart",
+            "flutterMode": "debug",
+            "args": ["--flavor", "dev","--target","lib/main_development.dart"]
+        },
+        {
+            "name": "Play Music Development Profile Mode",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_development.dart",
+            "flutterMode": "profile",
+            "args": ["--flavor", "dev","--target","lib/main_development.dart"]
+        },
+        {
+            "name": "Play Music Development Release Mode",
+            "request": "launch",
+            "type": "dart",
+            "program": "lib/main_development.dart",
+            "flutterMode": "release",
+            "args": ["--flavor", "dev","--target","lib/main_development.dart"]
+        }
+    ]
+}

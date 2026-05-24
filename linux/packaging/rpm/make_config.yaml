@@ -1,0 +1,45 @@
+icon: snap/gui/play_music.png
+summary: Local Music Player Inspired by the iPod Classic
+group: Applications/Multimedia
+vendor: Dhananjay Pawar
+packager: Dhananjay Pawar
+packagerEmail: https://github.com/DhananjayPawar2023/play-music-/issues
+license: BSD-4-Clause
+url: https://github.com/DhananjayPawar2023/play-music-
+requires:
+  - mpv
+  - mpv-libs
+  - gtk3
+  - glib2
+  - gdk-pixbuf2
+  - pango
+  - cairo
+  - atk
+  - at-spi2-atk
+  - libX11
+  - libxkbcommon
+  - libwayland-client
+  - mesa-libEGL
+  - libstdc++
+  - sqlite-libs
+  - xz-libs
+  - libcurl
+  - alsa-lib
+  - xdg-utils
+  - ca-certificates
+
+display_name: Play Music
+
+keywords:
+  - Music
+  - Audio
+  - iPod
+  - Local
+  - Songs
+  - Offline
+
+generic_name: Local Music Player
+categories:
+  - Music
+
+startup_notify: true
