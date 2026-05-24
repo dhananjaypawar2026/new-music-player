@@ -49,11 +49,11 @@ https://github.com/dhananjaypawar2026/new-music-player/releases/latest
 
 <div align="center">
 
-<a href="https://github.com/dhananjaypawar2026/new-music-player/releases/latest/download/Play-Music-Android-debug.apk">
+<a href="https://github.com/dhananjaypawar2026/new-music-player/releases/download/latest/Play-Music-Android-debug.apk">
   <img alt="Download APK" src="https://img.shields.io/static/v1?label=Download&message=Android+.apk&color=2ea44f&style=for-the-badge&logo=Android&logoColor=white&logoSize=auto">
 </a>
 
-<a href="https://github.com/dhananjaypawar2026/new-music-player/releases/latest/download/play_music-windows.zip">
+<a href="https://github.com/dhananjaypawar2026/new-music-player/releases/download/latest/play_music-windows.zip">
   <img alt="Download Windows" src="https://img.shields.io/static/v1?label=Download&message=Windows+.zip&color=blue&style=for-the-badge&logo=windows&logoColor=white&logoSize=auto">
 </a>
 
