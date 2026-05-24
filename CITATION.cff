@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: Play Music
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Dhananjay Pawar
+repository-code: 'https://github.com/DhananjayPawar2023/play-music-'
+url: 'https://DhananjayPawar2023.github.io/play-music-/#/'
+repository-artifact: 'https://github.com/DhananjayPawar2023/play-music-/releases/latest'
+abstract: >-
+  A local music player app designed to capture the nostalgic
+  essence of the iconic iPod Classic.
+license: BSD-4-Clause
+version: 1.12.0
+date-released: '2025-03-20'

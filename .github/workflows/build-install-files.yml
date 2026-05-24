@@ -1,0 +1,99 @@
+name: Build Install Files
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  android:
+    name: Android debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: pubspec.yaml
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Build debug APK
+        run: flutter build apk --debug --flavor production --target lib/main.dart
+
+      - name: Rename APK
+        run: cp build/app/outputs/flutter-apk/app-production-debug.apk Play-Music-Android-debug.apk
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Play-Music-Android-debug-apk
+          path: Play-Music-Android-debug.apk
+
+  web:
+    name: Web app
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: pubspec.yaml
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Build web
+        run: flutter build web --release --base-href /play-music-/
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Play-Music-web
+          path: build/web
+
+  windows:
+    name: Windows app
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: pubspec.yaml
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Generate localizations
+        run: flutter gen-l10n
+
+      - name: Build Windows
+        run: flutter build windows --release
+
+      - name: Archive Windows build
+        shell: pwsh
+        run: Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath play_music-windows.zip
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Play-Music-Windows
+          path: play_music-windows.zip
